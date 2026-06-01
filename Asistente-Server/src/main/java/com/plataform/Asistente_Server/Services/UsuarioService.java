@@ -32,19 +32,19 @@ public class UsuarioService {
             throw new RuntimeException("El usuario ya está registrado");
         }
         UsuarioModel model=new UsuarioModel();
-        model.setNombreUsuario(request.getNameUsuario());
-        model.setApellidoUsuario(request.getLastnameUsuario());
+        model.setNombreUsuario(request.getNombreUsuario());
+        model.setApellidoUsuario(request.getApellidoUsuario());
         model.setDniUsuario(request.getDniUsuario());
-        model.setCorreoUsuario(request.getEmailUsuario());
-        model.setHabilitadoUsuario(request.getEnnableUsuario());
-        model.setRolesUsuario(request.getRoleUsuario());
+        model.setCorreoUsuario(request.getCorreoUsuario());
+        model.setHabilitadoUsuario(request.getHabilitadoUsuario());
+        model.setRolesUsuario(request.getRolUsuario());
         UsuarioModel guardarUsuario= repositorioUsuario.save(model);
         UsuarioResponse response=new UsuarioResponse();
-        response.setNameUser(guardarUsuario.getNombreUsuario());
-        response.setLastnameUser(guardarUsuario.getApellidoUsuario());
-        response.setDniUser(guardarUsuario.getDniUsuario());
-        response.setStateUser(guardarUsuario.getHabilitadoUsuario());
-        response.setRoleUser(guardarUsuario.getRolesUsuario().getDescripcion());
+        response.setNombreUsuario(guardarUsuario.getNombreUsuario());
+        response.setApellidoUsuario(guardarUsuario.getApellidoUsuario());
+        response.setDniUsuario(guardarUsuario.getDniUsuario());
+        response.setHabilitadoUsuario(guardarUsuario.getHabilitadoUsuario());
+        response.setRolUsuario(guardarUsuario.getRolesUsuario().getDescripcion());
         return response;
     }
 

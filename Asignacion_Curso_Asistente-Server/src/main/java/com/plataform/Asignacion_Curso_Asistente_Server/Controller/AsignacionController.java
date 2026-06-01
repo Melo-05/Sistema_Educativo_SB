@@ -23,7 +23,7 @@ public class AsignacionController {
         return service.listarAsignacion();
     }
 
-    @GetMapping("/findById/{id}")
+    @GetMapping("/findAsignacionById/{id}")
     public AsignacionResponseDTO findById(@PathVariable Long id){
         return service.buscarAsignacionId(id);
     }

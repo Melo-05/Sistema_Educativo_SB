@@ -18,51 +18,21 @@ public class UsuarioClientDTO {
         this.rolUsuario = rolUsuario;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
+    public String getNombreUsuario() {return nombreUsuario;}
+    public void setNombreUsuario(String nombreUsuario) {this.nombreUsuario = nombreUsuario;}
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
+    public String getApellidoUsuario() {return apellidoUsuario;}
+    public void setApellidoUsuario(String apellidoUsuario) {this.apellidoUsuario = apellidoUsuario;}
 
-    public String getApellidoUsuario() {
-        return apellidoUsuario;
-    }
+    public String getDniUsuario() {return dniUsuario;}
+    public void setDniUsuario(String dniUsuario) {this.dniUsuario = dniUsuario;}
 
-    public void setApellidoUsuario(String apellidoUsuario) {
-        this.apellidoUsuario = apellidoUsuario;
-    }
+    public String getCorreoUsuario() {return correoUsuario;}
+    public void setCorreoUsuario(String correoUsuario) {this.correoUsuario = correoUsuario;}
 
-    public String getDniUsuario() {
-        return dniUsuario;
-    }
+    public Boolean getHabilitadoUsuario() {return habilitadoUsuario;}
+    public void setHabilitadoUsuario(Boolean habilitadoUsuario) {this.habilitadoUsuario = habilitadoUsuario;}
 
-    public void setDniUsuario(String dniUsuario) {
-        this.dniUsuario = dniUsuario;
-    }
-
-    public String getCorreoUsuario() {
-        return correoUsuario;
-    }
-
-    public void setCorreoUsuario(String correoUsuario) {
-        this.correoUsuario = correoUsuario;
-    }
-
-    public Boolean getHabilitadoUsuario() {
-        return habilitadoUsuario;
-    }
-
-    public void setHabilitadoUsuario(Boolean habilitadoUsuario) {
-        this.habilitadoUsuario = habilitadoUsuario;
-    }
-
-    public String getRolUsuario() {
-        return rolUsuario;
-    }
-
-    public void setRolUsuario(String rolUsuario) {
-        this.rolUsuario = rolUsuario;
-    }
+    public String getRolUsuario() {return rolUsuario;}
+    public void setRolUsuario(String rolUsuario) {this.rolUsuario = rolUsuario;}
 }

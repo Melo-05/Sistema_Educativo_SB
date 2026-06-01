@@ -1,38 +1,23 @@
 package com.plataform.Material_Curso_Server.DTO;
 
 public class CursoClientDTO {
-    private String nombre;
-    private String descripcion;
-    private Integer creditos;
+    private String nombreCurso;
+    private String descripcionCurso;
+    private Integer creditosCurso;
 
     public CursoClientDTO() {}
-    public CursoClientDTO(String nombre, String descripcion, Integer creditos) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.creditos = creditos;
+    public CursoClientDTO(String nombreCurso, String descripcionCurso, Integer creditosCurso) {
+        this.nombreCurso = nombreCurso;
+        this.descripcionCurso = descripcionCurso;
+        this.creditosCurso = creditosCurso;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombreCurso() {return nombreCurso;}
+    public void setNombreCurso(String nombreCurso) {this.nombreCurso = nombreCurso;}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getDescripcionCurso() {return descripcionCurso;}
+    public void setDescripcionCurso(String descripcionCurso) {this.descripcionCurso = descripcionCurso;}
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Integer getCreditos() {
-        return creditos;
-    }
-
-    public void setCreditos(Integer creditos) {
-        this.creditos = creditos;
-    }
+    public Integer getCreditosCurso() {return creditosCurso;}
+    public void setCreditosCurso(Integer creditosCurso) {this.creditosCurso = creditosCurso;}
 }

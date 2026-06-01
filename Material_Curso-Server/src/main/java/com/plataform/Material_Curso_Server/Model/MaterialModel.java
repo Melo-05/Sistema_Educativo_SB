@@ -12,7 +12,7 @@ public class MaterialModel {
     @Column(name = "id_material")
     private Long idMaterial;
     @Column(name = "asignacion_cu_as_id", nullable = false)
-    private Long asignacionCuAsId;
+    private Long asignacionCuAsIdMaterial;
     @Column(name = "titulo_material", nullable = false, length = 200)
     private String tituloMaterial;
     @Column(name = "descripcion_material", length = 500)
@@ -24,81 +24,41 @@ public class MaterialModel {
     @Column(name = "url_material", length = 300)
     private String urlMaterial;
     @Column(name = "fecha_subida")
-    private LocalDate fechaSubida;
+    private LocalDate fechaSubidaMaterial;
 
     public MaterialModel() {}
-    public MaterialModel(Long idMaterial, Long asignacionCuAsId, String tituloMaterial, String descripcionMaterial, String tipoMaterial, Boolean estadoMaterial, String urlMaterial, LocalDate fechaSubida) {
+    public MaterialModel(Long idMaterial, Long asignacionCuAsIdMaterial, String tituloMaterial, String descripcionMaterial, String tipoMaterial, Boolean estadoMaterial, String urlMaterial, LocalDate fechaSubidaMaterial) {
         this.idMaterial = idMaterial;
-        this.asignacionCuAsId = asignacionCuAsId;
+        this.asignacionCuAsIdMaterial = asignacionCuAsIdMaterial;
         this.tituloMaterial = tituloMaterial;
         this.descripcionMaterial = descripcionMaterial;
         this.tipoMaterial = tipoMaterial;
         this.estadoMaterial = estadoMaterial;
         this.urlMaterial = urlMaterial;
-        this.fechaSubida = fechaSubida;
+        this.fechaSubidaMaterial = fechaSubidaMaterial;
     }
 
-    public Long getIdMaterial() {
-        return idMaterial;
-    }
+    public Long getIdMaterial() {return idMaterial;}
+    public void setIdMaterial(Long idMaterial) {this.idMaterial = idMaterial;}
 
-    public void setIdMaterial(Long idMaterial) {
-        this.idMaterial = idMaterial;
-    }
+    public Long getAsignacionCuAsIdMaterial() {return asignacionCuAsIdMaterial;}
+    public void setAsignacionCuAsIdMaterial(Long asignacionCuAsIdMaterial) {this.asignacionCuAsIdMaterial = asignacionCuAsIdMaterial;}
 
-    public Long getAsignacionCuAsId() {
-        return asignacionCuAsId;
-    }
+    public String getTituloMaterial() {return tituloMaterial;}
+    public void setTituloMaterial(String tituloMaterial) {this.tituloMaterial = tituloMaterial;}
 
-    public void setAsignacionCuAsId(Long asignacionCuAsId) {
-        this.asignacionCuAsId = asignacionCuAsId;
-    }
+    public String getDescripcionMaterial() {return descripcionMaterial;}
+    public void setDescripcionMaterial(String descripcionMaterial) {this.descripcionMaterial = descripcionMaterial;}
 
-    public String getTituloMaterial() {
-        return tituloMaterial;
-    }
+    public String getTipoMaterial() {return tipoMaterial;}
+    public void setTipoMaterial(String tipoMaterial) {this.tipoMaterial = tipoMaterial;}
 
-    public void setTituloMaterial(String tituloMaterial) {
-        this.tituloMaterial = tituloMaterial;
-    }
+    public Boolean getEstadoMaterial() {return estadoMaterial;}
+    public void setEstadoMaterial(Boolean estadoMaterial) {this.estadoMaterial = estadoMaterial;}
 
-    public String getDescripcionMaterial() {
-        return descripcionMaterial;
-    }
+    public String getUrlMaterial() {return urlMaterial;}
+    public void setUrlMaterial(String urlMaterial) {this.urlMaterial = urlMaterial;}
 
-    public void setDescripcionMaterial(String descripcionMaterial) {
-        this.descripcionMaterial = descripcionMaterial;
-    }
-
-    public String getTipoMaterial() {
-        return tipoMaterial;
-    }
-
-    public void setTipoMaterial(String tipoMaterial) {
-        this.tipoMaterial = tipoMaterial;
-    }
-
-    public Boolean getEstadoMaterial() {
-        return estadoMaterial;
-    }
-
-    public void setEstadoMaterial(Boolean estadoMaterial) {
-        this.estadoMaterial = estadoMaterial;
-    }
-
-    public String getUrlMaterial() {
-        return urlMaterial;
-    }
-
-    public void setUrlMaterial(String urlMaterial) {
-        this.urlMaterial = urlMaterial;
-    }
-
-    public LocalDate getFechaSubida() {
-        return fechaSubida;
-    }
-
-    public void setFechaSubida(LocalDate fechaSubida) {
-        this.fechaSubida = fechaSubida;
-    }
+    public LocalDate getFechaSubidaMaterial() {return fechaSubidaMaterial;}
+    public void setFechaSubidaMaterial(LocalDate fechaSubidaMaterial) {this.fechaSubidaMaterial = fechaSubidaMaterial;}
 }

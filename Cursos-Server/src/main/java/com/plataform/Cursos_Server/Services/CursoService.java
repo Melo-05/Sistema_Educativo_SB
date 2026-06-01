@@ -14,34 +14,32 @@ import java.util.Optional;
 public class CursoService {
 
     @Autowired
-    private CursoRepository repo;
+    private CursoRepository repositorio_curso;
 
-    public List<CursoResponse> listarCursos() {
-        return repo.findAll()
-                   .stream()
-                   .map(CursoResponse::new) // convierte Model → DTO
-                   .toList();
+    public List<CursoModel> listarCursos() {
+        return repositorio_curso.findAll();
     }
-    public Optional<CursoResponse> buscarCursoPorId(Long id) {
-        return repo.findById(id)
-                   .map(CursoResponse::new);
+    public Optional<CursoModel> buscarCursoPorId(Long id) {
+        return repositorio_curso.findById(id);
     }
-
-    public Optional<CursoResponse> buscarCursoPorNombre(String nombreCurso) {
-        return repo.findByNombreCurso(nombreCurso)
-                   .map(CursoResponse::new);
+    public Optional<CursoModel> buscarCursoPorNombre(String nombreCurso) {
+        return repositorio_curso.findByNombreCurso(nombreCurso);
     }
 
     public CursoResponse agregarCurso(CursoRequest request) {
-        CursoModel c = new CursoModel();
-        c.setNombreCurso(request.getNombreCurso());
-        c.setDescripcionCurso(request.getDescripcionCurso());
-        c.setCreditosCurso(request.getCreditosCurso());
-        CursoModel saved = repo.save(c);
-        return new CursoResponse(saved);
+        CursoModel curso = new CursoModel();
+        curso.setNombreCurso(request.getNombreCurso());
+        curso.setDescripcionCurso(request.getDescripcionCurso());
+        curso.setCreditosCurso(request.getCreditosCurso());
+        CursoModel guardado = repositorio_curso.save(curso);
+        CursoResponse response=new CursoResponse();
+        response.setNombreCurso(guardado.getNombreCurso());
+        response.setDescripcionCurso(guardado.getDescripcionCurso());
+        response.setCreditosCurso(guardado.getCreditosCurso());
+        return response;
     }
 
-    public Optional<CursoResponse> actualizarCurso(Long id, CursoRequest request) {
+    /*public Optional<CursoResponse> actualizarCurso(Long id, CursoRequest request) {
         return repo.findById(id)
                    .map(c -> {
                        c.setNombreCurso(request.getNombreCurso());
@@ -50,11 +48,11 @@ public class CursoService {
                        CursoModel updated = repo.save(c);
                        return new CursoResponse(updated);
                    });
-    }
+    }*/
 
     public boolean eliminarCurso(Long id) {
-        if (repo.existsById(id)) {
-            repo.deleteById(id);
+        if (repositorio_curso.existsById(id)) {
+            repositorio_curso.deleteById(id);
             return true;
         }
         return false;

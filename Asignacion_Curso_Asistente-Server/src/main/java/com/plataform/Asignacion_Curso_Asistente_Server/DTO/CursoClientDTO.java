@@ -3,11 +3,11 @@ package com.plataform.Asignacion_Curso_Asistente_Server.DTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CursoClientDTO {
-    @JsonProperty("nombre")
+    @JsonProperty("nombreCurso")
     private String nombreCurso;
-    @JsonProperty("descripcion")
+    @JsonProperty("descripcionCurso")
     private String descripcionCurso;
-    @JsonProperty("creditos")
+    @JsonProperty("creditosCurso")
     private Integer creditosCurso;
 
     public CursoClientDTO() {}

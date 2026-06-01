@@ -2,6 +2,7 @@ package com.plataform.Cursos_Server.Controllers;
 
 import com.plataform.Cursos_Server.DTOs.CursoRequest;
 import com.plataform.Cursos_Server.DTOs.CursoResponse;
+import com.plataform.Cursos_Server.Models.CursoModel;
 import com.plataform.Cursos_Server.Services.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/curso")
@@ -19,15 +21,13 @@ public class CursoController {
     private CursoService service;
 
     @GetMapping("/listCurso")
-    public List<CursoResponse> listCurso() {
+    public List<CursoModel> listCurso() {
         return service.listarCursos();
     }
 
     @GetMapping("/findCursoById/{id}")
-    public ResponseEntity<CursoResponse> findCursoById(@PathVariable Long id) {
-        return service.buscarCursoPorId(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public Optional<CursoModel> findCursoById(@PathVariable Long id) {
+        return service.buscarCursoPorId(id);
     }
 
     @PostMapping("/addCurso")
@@ -38,13 +38,13 @@ public class CursoController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/updateCurso/{id}")
+    /*@PutMapping("/updateCurso/{id}")
     public ResponseEntity<Map<String,Object>> updateCurso(@PathVariable Long id, @Valid @RequestBody CursoRequest request) {
         Map<String,Object> response = new HashMap<>();
         response.put("mensaje", "Curso actualizado correctamente");
         response.put("data", service.actualizarCurso(id, request));
         return ResponseEntity.ok(response);
-    }
+    }*/
 
     @DeleteMapping("/deleteCurso/{id}")
     public ResponseEntity<Map<String,Object>> deleteCurso(@PathVariable Long id) {

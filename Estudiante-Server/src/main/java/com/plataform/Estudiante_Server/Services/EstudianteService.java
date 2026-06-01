@@ -14,32 +14,35 @@ public class EstudianteService {
     @Autowired
     private EstudianteRepository repository_estudiante;
 
-    public List<EstudianteResponse> listarEstudiantes() {
-        return repository_estudiante.findAll()
-                   .stream()
-                   .map(EstudianteResponse::new)
-                   .toList();
+    public List<EstudianteModel> listarEstudiantes() {
+        return repository_estudiante.findAll();
     }
-    public Optional<EstudianteResponse> buscarEstudiantePorId(Long id) {
-        return repository_estudiante.findById(id).map(EstudianteResponse::new);
+    public Optional<EstudianteModel> buscarEstudiantePorId(Long id) {
+        return repository_estudiante.findById(id);
     }
-    public Optional<EstudianteResponse> buscarEstudiantePorDni(String dni) {
-        return repository_estudiante.findByDniEstudiante(dni).map(EstudianteResponse::new);
+    public Optional<EstudianteModel> buscarEstudiantePorDni(String dni) {
+        return repository_estudiante.findByDniEstudiante(dni);
     }
 
     public EstudianteResponse agregarEstudiante(EstudianteRequest request) {
-        EstudianteModel e = new EstudianteModel();
-        e.setNombreEstudiante(request.getNombreEstudiante());
-        e.setApellidoEstudiante(request.getApellidoEstudiante());
-        e.setDniEstudiante(request.getDniEstudiante());
-        e.setCorreoEstudiante(request.getCorreoEstudiante());
-        e.setHabilitadoEstudiante(request.getHabilitadoEstudiante());
-        e.setRolEstudiante(request.getRolEstudiante());
-        EstudianteModel saved = repository_estudiante.save(e);
-        return new EstudianteResponse(saved);
+        EstudianteModel estudiante = new EstudianteModel();
+        estudiante.setNombreEstudiante(request.getNombreEstudiante());
+        estudiante.setApellidoEstudiante(request.getApellidoEstudiante());
+        estudiante.setDniEstudiante(request.getDniEstudiante());
+        estudiante.setCorreoEstudiante(request.getCorreoEstudiante());
+        estudiante.setHabilitadoEstudiante(request.getHabilitadoEstudiante());
+        estudiante.setRolEstudiante(request.getRolEstudiante());
+        EstudianteModel guardado = repository_estudiante.save(estudiante);
+        EstudianteResponse response=new EstudianteResponse();
+        response.setIdEstudiante(guardado.getIdEstudiante());
+        response.setNombreEstudiante(guardado.getNombreEstudiante());
+        response.setApellidoEstudiante(guardado.getApellidoEstudiante());
+        response.setDniEstudiante(guardado.getDniEstudiante());
+        response.setCorreoEstudiante(guardado.getCorreoEstudiante());
+        return response;
     }
 
-    public Optional<EstudianteResponse> actualizarEstudiante(Long id, EstudianteRequest request) {
+    /*public Optional<EstudianteResponse> actualizarEstudiante(Long id, EstudianteRequest request) {
         return repository_estudiante.findById(id)
                    .map(e -> {
                        e.setNombreEstudiante(request.getNombreEstudiante());
@@ -49,7 +52,7 @@ public class EstudianteService {
                        EstudianteModel updated = repository_estudiante.save(e);
                        return new EstudianteResponse(updated);
                    });
-    }
+    }*/
 
     public boolean eliminarEstudiante(Long id) {
         if (repository_estudiante.existsById(id)) {

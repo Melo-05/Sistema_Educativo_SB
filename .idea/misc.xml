@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/Seguridad-Server/pom.xml" />
         <option value="$PROJECT_DIR$/Asignacion_Curso_Asistente-Server/pom.xml" />
         <option value="$PROJECT_DIR$/Estudiante-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/Inscripcion_Estudiante_Curso-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/Evaluacion_Curso-Server/pom.xml" />
       </list>
     </option>
   </component>

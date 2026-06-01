@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "Asignacion-Curso-Asistente-Server")
 public interface AsignacionClient {
-    @GetMapping("/asignacion/findById/{id}")
+    @GetMapping("/asignacion/findAsignacionById/{id}")
     AsignacionClientDTO buscarAsistentePorId(@PathVariable Long id);
 }

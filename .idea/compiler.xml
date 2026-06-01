@@ -11,9 +11,11 @@
         <module name="Seguridad-Server" />
         <module name="Material_Curso-Server" />
         <module name="Eureka-Server" />
+        <module name="Evaluacion_Curso-Server" />
         <module name="Cursos-Server" />
         <module name="Config-Server" />
         <module name="Estudiante-Server" />
+        <module name="Inscripcion_Estudiante_Curso-Server" />
       </profile>
     </annotationProcessing>
   </component>
@@ -25,6 +27,8 @@
       <module name="Cursos-Server" options="-parameters" />
       <module name="Estudiante-Server" options="-parameters" />
       <module name="Eureka-Server" options="-parameters" />
+      <module name="Evaluacion_Curso-Server" options="-parameters" />
+      <module name="Inscripcion_Estudiante_Curso-Server" options="-parameters" />
       <module name="Material_Curso-Server" options="-parameters" />
       <module name="Seguridad-Server" options="-parameters" />
     </option>

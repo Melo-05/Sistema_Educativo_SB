@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "Asistente-Server")
 public interface AsistenteClient {
-    @GetMapping("/asistente/findById/{id}")
+    @GetMapping("/asistente/findAsistenteById/{id}")
     UsuarioClientDTO buscarAsistentePorId(@PathVariable Long id);
 }

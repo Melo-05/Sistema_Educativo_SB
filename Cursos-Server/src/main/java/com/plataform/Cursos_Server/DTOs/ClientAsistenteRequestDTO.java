@@ -4,18 +4,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class ClientAsistenteRequestDTO {
-    @NotBlank(message = "El nombre es obligatorio")
     private String nameAsistente;
-    @NotBlank(message = "El apellido es obligatorio")
     private String lastnameAsistente;
-    @NotBlank(message = "El DNI es obligatorio")
-    @Size(min = 8, max = 8, message = "El DNI debe tener 8 caracteres")
     private String dniAsistente;
-    @NotNull(message = "El rol es obligatorio")
     private String roleAsistente;
-    @NotNull(message = "El habilitado es obligatorio")
     private Boolean ennableAsistente;
-    @NotBlank(message = "El correo es obligatorio")
     private String emailAsistente;
 
 

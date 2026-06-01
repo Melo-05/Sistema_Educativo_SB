@@ -1,58 +1,34 @@
 package com.plataform.Asistente_Server.DTOs;
 
 public class UsuarioResponse {
-    private String nameUser;
-    private String lastnameUser;
-    private String dniUser;
-    private String roleUser;
-    private Boolean stateUser;
+    private String nombreUsuario;
+    private String apellidoUsuario;
+    private String dniUsuario;
+    private String rolUsuario;
+    private Boolean habilitadoUsuario;
 
     public UsuarioResponse() {}
-    public UsuarioResponse(String nameUser, String lastnameUser, String dniUser, String roleUser, Boolean stateUser) {
-        this.nameUser = nameUser;
-        this.lastnameUser = lastnameUser;
-        this.dniUser = dniUser;
-        this.roleUser = roleUser;
-        this.stateUser = stateUser;
+
+    public UsuarioResponse(String nombreUsuario, String apellidoUsuario, String dniUsuario, String rolUsuario, Boolean habilitadoUsuario) {
+        this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
+        this.dniUsuario = dniUsuario;
+        this.rolUsuario = rolUsuario;
+        this.habilitadoUsuario = habilitadoUsuario;
     }
 
-    public String getNameUser() {
-        return nameUser;
-    }
+    public String getNombreUsuario() {return nombreUsuario;}
+    public void setNombreUsuario(String nombreUsuario) {this.nombreUsuario = nombreUsuario;}
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
-    }
+    public String getApellidoUsuario() {return apellidoUsuario;}
+    public void setApellidoUsuario(String apellidoUsuario) {this.apellidoUsuario = apellidoUsuario;}
 
-    public String getLastnameUser() {
-        return lastnameUser;
-    }
+    public String getDniUsuario() {return dniUsuario;}
+    public void setDniUsuario(String dniUsuario) {this.dniUsuario = dniUsuario;}
 
-    public void setLastnameUser(String lastnameUser) {
-        this.lastnameUser = lastnameUser;
-    }
+    public String getRolUsuario() {return rolUsuario;}
+    public void setRolUsuario(String rolUsuario) {this.rolUsuario = rolUsuario;}
 
-    public String getDniUser() {
-        return dniUser;
-    }
-
-    public void setDniUser(String dniUser) {
-        this.dniUser = dniUser;
-    }
-
-    public String getRoleUser() {
-        return roleUser;
-    }
-
-    public void setRoleUser(String roleUser) {
-        this.roleUser = roleUser;
-    }
-
-    public Boolean getStateUser() {
-        return stateUser;
-    }
-
-    public void setStateUser(Boolean stateUser) {
-        this.stateUser = stateUser;
-    }
+    public Boolean getHabilitadoUsuario() {return habilitadoUsuario;}
+    public void setHabilitadoUsuario(Boolean habilitadoUsuario) {this.habilitadoUsuario = habilitadoUsuario;}
 }

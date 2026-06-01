@@ -28,10 +28,8 @@ public class AsignacionService {
     public AsignacionResponseDTO buscarAsignacionId(Long id){
         AsignacionModel asignacion = repository.findById(id).
                 orElseThrow(() -> new RuntimeException("Asignacion no encontrada"));
-        UsuarioClientDTO asistente =
-                asistenteClient.buscarAsistentePorId(asignacion.getAsistenteId());
-        CursoClientDTO curso =
-                cursoClient.buscarCursoPorId(asignacion.getCursoId());
+        UsuarioClientDTO asistente = asistenteClient.buscarAsistentePorId(asignacion.getAsistenteIdAsignacion());
+        CursoClientDTO curso = cursoClient.buscarCursoPorId(asignacion.getCursoIdAsignacion());
         return new AsignacionResponseDTO(
                 asignacion.getIdAsignacion(),
                 asistente,
@@ -41,13 +39,13 @@ public class AsignacionService {
     }
 
     public AsignacionResponseDTO registrar(AsignacionRequestDTO request){
-        UsuarioClientDTO asistente = asistenteClient.buscarAsistentePorId(request.getIdAsistente());
-        CursoClientDTO curso = cursoClient.buscarCursoPorId(request.getIdCurso());
+        UsuarioClientDTO asistente = asistenteClient.buscarAsistentePorId(request.getAsistenteIdAsignacion());
+        CursoClientDTO curso = cursoClient.buscarCursoPorId(request.getCursoIdAsignacion());
         if(asistente == null){throw new RuntimeException("Asistente no encontrado");}
         if(curso == null){throw new RuntimeException("Curso no encontrado");}
         AsignacionModel asignacion = new AsignacionModel();
-        asignacion.setAsistenteId(request.getIdAsistente());
-        asignacion.setCursoId(request.getIdCurso());
+        asignacion.setAsistenteIdAsignacion(request.getAsistenteIdAsignacion());
+        asignacion.setCursoIdAsignacion(request.getCursoIdAsignacion());
         asignacion.setFechaAsignacion(LocalDate.now());
         repository.save(asignacion);
         return new AsignacionResponseDTO(

@@ -1,28 +1,18 @@
 package com.plataform.Asignacion_Curso_Asistente_Server.DTO;
 
 public class AsignacionRequestDTO {
-    private Long idAsistente;
-    private Long idCurso;
+    private Long asistenteIdAsignacion;
+    private Long cursoIdAsignacion;
 
     public AsignacionRequestDTO() {}
-    public AsignacionRequestDTO(Long idAsistente, Long idCurso) {
-        this.idAsistente = idAsistente;
-        this.idCurso = idCurso;
+    public AsignacionRequestDTO(Long asistenteIdAsignacion, Long cursoIdAsignacion) {
+        this.asistenteIdAsignacion = asistenteIdAsignacion;
+        this.cursoIdAsignacion = cursoIdAsignacion;
     }
 
-    public Long getIdAsistente() {
-        return idAsistente;
-    }
+    public Long getAsistenteIdAsignacion() {return asistenteIdAsignacion;}
+    public void setAsistenteIdAsignacion(Long asistenteIdAsignacion) {this.asistenteIdAsignacion = asistenteIdAsignacion;}
 
-    public void setIdAsistente(Long idAsistente) {
-        this.idAsistente = idAsistente;
-    }
-
-    public Long getIdCurso() {
-        return idCurso;
-    }
-
-    public void setIdCurso(Long idCurso) {
-        this.idCurso = idCurso;
-    }
+    public Long getCursoIdAsignacion() {return cursoIdAsignacion;}
+    public void setCursoIdAsignacion(Long cursoIdAsignacion) {this.cursoIdAsignacion = cursoIdAsignacion;}
 }

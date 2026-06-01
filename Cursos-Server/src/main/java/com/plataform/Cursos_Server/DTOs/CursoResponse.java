@@ -1,32 +1,24 @@
 package com.plataform.Cursos_Server.DTOs;
 
-import com.plataform.Cursos_Server.Models.CursoModel;
-
 public class CursoResponse {
-    private String nombre;
-    private String descripcion;
-    private Integer creditos;
+    private String nombreCurso;
+    private String descripcionCurso;
+    private Integer creditosCurso;
 
     public CursoResponse() {}
 
-    public CursoResponse(String nombre, String descripcion, Integer creditos) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.creditos = creditos;
+    public CursoResponse(String nombreCurso, String descripcionCurso, Integer creditosCurso) {
+        this.nombreCurso = nombreCurso;
+        this.descripcionCurso = descripcionCurso;
+        this.creditosCurso = creditosCurso;
     }
 
-    public CursoResponse(CursoModel model) {
-        this.nombre = model.getNombreCurso();
-        this.descripcion = model.getDescripcionCurso();
-        this.creditos = model.getCreditosCurso();
-    }
+    public String getNombreCurso() {return nombreCurso;}
+    public void setNombreCurso(String nombreCurso) {this.nombreCurso = nombreCurso;}
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getDescripcionCurso() {return descripcionCurso;}
+    public void setDescripcionCurso(String descripcionCurso) {this.descripcionCurso = descripcionCurso;}
 
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-
-    public Integer getCreditos() { return creditos; }
-    public void setCreditos(Integer creditos) { this.creditos = creditos; }
+    public Integer getCreditosCurso() {return creditosCurso;}
+    public void setCreditosCurso(Integer creditosCurso) {this.creditosCurso = creditosCurso;}
 }

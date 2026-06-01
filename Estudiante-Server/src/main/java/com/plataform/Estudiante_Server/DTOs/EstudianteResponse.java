@@ -3,37 +3,58 @@ package com.plataform.Estudiante_Server.DTOs;
 import com.plataform.Estudiante_Server.Models.EstudianteModel;
 
 public class EstudianteResponse {
-    private String nombre;
-    private String apellido;
-    private String dni;
-    private String correo;
+    private Long idEstudiante;
+    private String nombreEstudiante;
+    private String apellidoEstudiante;
+    private String dniEstudiante;
+    private String correoEstudiante;
 
     public EstudianteResponse() {}
 
-    public EstudianteResponse(String nombre, String apellido, String dni, String correo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.correo = correo;
+    public EstudianteResponse(Long idEstudiante,String nombreEstudiante, String apellidoEstudiante, String dniEstudiante, String correoEstudiante) {
+        this.nombreEstudiante = nombreEstudiante;
+        this.apellidoEstudiante = apellidoEstudiante;
+        this.dniEstudiante = dniEstudiante;
+        this.correoEstudiante = correoEstudiante;
     }
 
-    public EstudianteResponse(EstudianteModel model) {
-        this.nombre = model.getNombreEstudiante();
-        this.apellido = model.getApellidoEstudiante();
-        this.dni = model.getDniEstudiante();
-        this.correo = model.getCorreoEstudiante();
+    public String getCorreoEstudiante() {
+        return correoEstudiante;
     }
 
+    public void setCorreoEstudiante(String correoEstudiante) {
+        this.correoEstudiante = correoEstudiante;
+    }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getDniEstudiante() {
+        return dniEstudiante;
+    }
 
-    public String getApellido() { return apellido; }
-    public void setApellido(String apellido) { this.apellido = apellido; }
+    public void setDniEstudiante(String dniEstudiante) {
+        this.dniEstudiante = dniEstudiante;
+    }
 
-    public String getDni() { return dni; }
-    public void setDni(String dni) { this.dni = dni; }
+    public String getApellidoEstudiante() {
+        return apellidoEstudiante;
+    }
 
-    public String getCorreo() { return correo; }
-    public void setCorreo(String correo) { this.correo = correo; }
+    public void setApellidoEstudiante(String apellidoEstudiante) {
+        this.apellidoEstudiante = apellidoEstudiante;
+    }
+
+    public String getNombreEstudiante() {
+        return nombreEstudiante;
+    }
+
+    public void setNombreEstudiante(String nombreEstudiante) {
+        this.nombreEstudiante = nombreEstudiante;
+    }
+
+    public Long getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    public void setIdEstudiante(Long idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
 }

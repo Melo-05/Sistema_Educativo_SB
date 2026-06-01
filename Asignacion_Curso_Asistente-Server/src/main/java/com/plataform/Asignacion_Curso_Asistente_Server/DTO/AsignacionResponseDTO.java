@@ -4,48 +4,28 @@ import java.time.LocalDate;
 
 public class AsignacionResponseDTO {
     private Long idAsignacion;
-    private UsuarioClientDTO asistente;
-    private CursoClientDTO curso;
+    private UsuarioClientDTO asistenteIdAsignacion;
+    private CursoClientDTO cursoIdAsignacion;
     private LocalDate fechaAsignacion;
 
     public AsignacionResponseDTO() {}
 
-    public AsignacionResponseDTO(Long idAsignacion, UsuarioClientDTO asistente, CursoClientDTO curso, LocalDate fechaAsignacion) {
+    public AsignacionResponseDTO(Long idAsignacion, UsuarioClientDTO asistenteIdAsignacion, CursoClientDTO cursoIdAsignacion, LocalDate fechaAsignacion) {
         this.idAsignacion = idAsignacion;
-        this.asistente = asistente;
-        this.curso = curso;
+        this.asistenteIdAsignacion = asistenteIdAsignacion;
+        this.cursoIdAsignacion = cursoIdAsignacion;
         this.fechaAsignacion = fechaAsignacion;
     }
 
-    public Long getIdAsignacion() {
-        return idAsignacion;
-    }
+    public Long getIdAsignacion() {return idAsignacion;}
+    public void setIdAsignacion(Long idAsignacion) {this.idAsignacion = idAsignacion;}
 
-    public void setIdAsignacion(Long idAsignacion) {
-        this.idAsignacion = idAsignacion;
-    }
+    public UsuarioClientDTO getAsistenteIdAsignacion() {return asistenteIdAsignacion;}
+    public void setAsistenteIdAsignacion(UsuarioClientDTO asistenteIdAsignacion) {this.asistenteIdAsignacion = asistenteIdAsignacion;}
 
-    public UsuarioClientDTO getAsistente() {
-        return asistente;
-    }
+    public CursoClientDTO getCursoIdAsignacion() {return cursoIdAsignacion;}
+    public void setCursoIdAsignacion(CursoClientDTO cursoIdAsignacion) {this.cursoIdAsignacion = cursoIdAsignacion;}
 
-    public void setAsistente(UsuarioClientDTO asistente) {
-        this.asistente = asistente;
-    }
-
-    public CursoClientDTO getCurso() {
-        return curso;
-    }
-
-    public void setCurso(CursoClientDTO curso) {
-        this.curso = curso;
-    }
-
-    public LocalDate getFechaAsignacion() {
-        return fechaAsignacion;
-    }
-
-    public void setFechaAsignacion(LocalDate fechaAsignacion) {
-        this.fechaAsignacion = fechaAsignacion;
-    }
+    public LocalDate getFechaAsignacion() {return fechaAsignacion;}
+    public void setFechaAsignacion(LocalDate fechaAsignacion) {this.fechaAsignacion = fechaAsignacion;}
 }

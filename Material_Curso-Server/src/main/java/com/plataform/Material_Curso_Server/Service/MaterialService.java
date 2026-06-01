@@ -27,16 +27,16 @@ public class MaterialService {
     }
 
     public MaterialResponseDTO registrarMaterial(MaterialRequestDTO request) {
-        AsignacionClientDTO asignacion = asignacionClient.buscarAsistentePorId(request.getIdAsignacion());
+        AsignacionClientDTO asignacion = asignacionClient.buscarAsistentePorId(request.getAsignacionCuAsIdMaterial());
         if(asignacion == null){throw new RuntimeException("Asignacion no encontrado");}
         MaterialModel material = new MaterialModel();
-        material.setAsignacionCuAsId(request.getIdAsignacion());
-        material.setTituloMaterial(request.getTitulo());
-        material.setDescripcionMaterial(request.getDescripcion());
-        material.setTipoMaterial(request.getTipo());
-        material.setEstadoMaterial(request.getEstado());
-        material.setUrlMaterial(request.getUrl());
-        material.setFechaSubida(LocalDate.now());
+        material.setAsignacionCuAsIdMaterial(request.getAsignacionCuAsIdMaterial());
+        material.setTituloMaterial(request.getTituloMaterial());
+        material.setDescripcionMaterial(request.getDescripcionMaterial());
+        material.setTipoMaterial(request.getTipoMaterial());
+        material.setEstadoMaterial(request.getEstadoMaterial());
+        material.setUrlMaterial(request.getUrlMaterial());
+        material.setFechaSubidaMaterial(LocalDate.now());
         repository.save(material);
         return new MaterialResponseDTO(
                 material.getIdMaterial(),
@@ -46,7 +46,7 @@ public class MaterialService {
                 material.getTipoMaterial(),
                 material.getEstadoMaterial(),
                 material.getUrlMaterial(),
-                material.getFechaSubida()
+                material.getFechaSubidaMaterial()
         );
     }
 

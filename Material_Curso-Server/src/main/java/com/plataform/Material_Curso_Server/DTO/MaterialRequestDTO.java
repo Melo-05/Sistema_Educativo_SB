@@ -3,78 +3,73 @@ package com.plataform.Material_Curso_Server.DTO;
 import java.time.LocalDate;
 
 public class MaterialRequestDTO {
-    private Long idAsignacion;
-    private String titulo;
-    private String descripcion;
-    private String tipo;
-    private Boolean estado;
-    private String url;
-    private LocalDate fecha;
+    private Long asignacionCuAsIdMaterial;
+    private String tituloMaterial;
+    private String descripcionMaterial;
+    private String tipoMaterial;
+    private Boolean estadoMaterial;
+    private String urlMaterial;
+    private LocalDate fechaSubidaMaterial;
 
     public MaterialRequestDTO() {}
-    public MaterialRequestDTO(Long idAsignacion, String titulo, String descripcion, String tipo, Boolean estado, String url, LocalDate fecha) {
-        this.idAsignacion = idAsignacion;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.tipo = tipo;
-        this.estado = estado;
-        this.url = url;
-        this.fecha = fecha;
+    public MaterialRequestDTO(Long asignacionCuAsIdMaterial, String tituloMaterial, String descripcionMaterial, String tipoMaterial, Boolean estadoMaterial, String urlMaterial, LocalDate fechaSubidaMaterial) {
+        this.asignacionCuAsIdMaterial = asignacionCuAsIdMaterial;
+        this.tituloMaterial = tituloMaterial;
+        this.descripcionMaterial = descripcionMaterial;
+        this.tipoMaterial = tipoMaterial;
+        this.estadoMaterial = estadoMaterial;
+        this.urlMaterial = urlMaterial;
+        this.fechaSubidaMaterial = fechaSubidaMaterial;
     }
 
-    public Long getIdAsignacion() {
-        return idAsignacion;
+    public Long getAsignacionCuAsIdMaterial() {return asignacionCuAsIdMaterial;}
+    public void setAsignacionCuAsIdMaterial(Long asignacionCuAsIdMaterial) {this.asignacionCuAsIdMaterial = asignacionCuAsIdMaterial;}
+
+    public String getTituloMaterial() {
+        return tituloMaterial;
     }
 
-    public void setIdAsignacion(Long idAsignacion) {
-        this.idAsignacion = idAsignacion;
+    public void setTituloMaterial(String tituloMaterial) {
+        this.tituloMaterial = tituloMaterial;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getDescripcionMaterial() {
+        return descripcionMaterial;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setDescripcionMaterial(String descripcionMaterial) {
+        this.descripcionMaterial = descripcionMaterial;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getTipoMaterial() {
+        return tipoMaterial;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setTipoMaterial(String tipoMaterial) {
+        this.tipoMaterial = tipoMaterial;
     }
 
-    public String getTipo() {
-        return tipo;
+    public Boolean getEstadoMaterial() {
+        return estadoMaterial;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setEstadoMaterial(Boolean estadoMaterial) {
+        this.estadoMaterial = estadoMaterial;
     }
 
-    public Boolean getEstado() {
-        return estado;
+    public String getUrlMaterial() {
+        return urlMaterial;
     }
 
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
+    public void setUrlMaterial(String urlMaterial) {
+        this.urlMaterial = urlMaterial;
     }
 
-    public String getUrl() {
-        return url;
+    public LocalDate getFechaSubidaMaterial() {
+        return fechaSubidaMaterial;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    public void setFechaSubidaMaterial(LocalDate fechaSubidaMaterial) {
+        this.fechaSubidaMaterial = fechaSubidaMaterial;
     }
 }

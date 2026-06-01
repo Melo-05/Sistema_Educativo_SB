@@ -4,72 +4,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UsuarioClientDTO {
     @JsonProperty("nombreUsuario")
-    private String nombre;
+    private String nombreUsuario;
     @JsonProperty("apellidoUsuario")
-    private String apellido;
+    private String apellidoUsuario;
     @JsonProperty("dniUsuario")
-    private String dni;
+    private String dniUsuario;
     @JsonProperty("correoUsuario")
-    private String correo;
+    private String correoUsuario;
     @JsonProperty("habilitadoUsuario")
-    private Boolean habilitado;
+    private Boolean habilitadoUsuario;
     @JsonProperty("rolesUsuario")
-    private String rol;
+    private String rolesUsuario;
 
-    public UsuarioClientDTO(String nombre, String apellido, String dni, String correo, Boolean habilitado, String rol) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.correo = correo;
-        this.habilitado = habilitado;
-        this.rol = rol;
+    public UsuarioClientDTO() {}
+    public UsuarioClientDTO(String nombreUsuario, String apellidoUsuario, String dniUsuario, String correoUsuario, Boolean habilitadoUsuario, String rolesUsuario) {
+        this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
+        this.dniUsuario = dniUsuario;
+        this.correoUsuario = correoUsuario;
+        this.habilitadoUsuario = habilitadoUsuario;
+        this.rolesUsuario = rolesUsuario;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombreUsuario() {return nombreUsuario;}
+    public void setNombreUsuario(String nombreUsuario) {this.nombreUsuario = nombreUsuario;}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getApellidoUsuario() {return apellidoUsuario;}
+    public void setApellidoUsuario(String apellidoUsuario) {this.apellidoUsuario = apellidoUsuario;}
 
-    public String getApellido() {
-        return apellido;
-    }
+    public String getDniUsuario() {return dniUsuario;}
+    public void setDniUsuario(String dniUsuario) {this.dniUsuario = dniUsuario;}
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    public String getCorreoUsuario() {return correoUsuario;}
+    public void setCorreoUsuario(String correoUsuario) {this.correoUsuario = correoUsuario;}
 
-    public String getDni() {
-        return dni;
-    }
+    public Boolean getHabilitadoUsuario() {return habilitadoUsuario;}
+    public void setHabilitadoUsuario(Boolean habilitadoUsuario) {this.habilitadoUsuario = habilitadoUsuario;}
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public Boolean getHabilitado() {
-        return habilitado;
-    }
-
-    public void setHabilitado(Boolean habilitado) {
-        this.habilitado = habilitado;
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
+    public String getRolesUsuario() {return rolesUsuario;}
+    public void setRolesUsuario(String rolesUsuario) {this.rolesUsuario = rolesUsuario;}
 }

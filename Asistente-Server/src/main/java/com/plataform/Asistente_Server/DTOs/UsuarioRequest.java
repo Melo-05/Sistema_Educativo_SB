@@ -6,77 +6,45 @@ import jakarta.validation.constraints.Size;
 
 public class UsuarioRequest {
     @NotBlank(message = "El nombre es obligatorio")
-    private String nameUsuario;
+    private String nombreUsuario;
     @NotBlank(message = "El apellido es obligatorio")
-    private String lastnameUsuario;
+    private String apellidoUsuario;
     @NotBlank(message = "El DNI es obligatorio")
     @Size(min = 8, max = 8, message = "El DNI debe tener 8 caracteres")
     private String dniUsuario;
     @NotNull(message = "El rol es obligatorio")
-    private RolesModel roleUsuario;
+    private RolesModel rolUsuario;
     @NotNull(message = "El habilitado es obligatorio")
-    private Boolean ennableUsuario;
+    private Boolean habilitadoUsuario;
     @NotBlank(message = "El correo es obligatorio")
-    private String emailUsuario;
+    private String correoUsuario;
 
+    public UsuarioRequest() {}
 
-    public UsuarioRequest() {
-    }
-
-    public UsuarioRequest(String nameUsuario, String lastnameUsuario, String dniUsuario, RolesModel roleUsuario, Boolean ennableUsuario, String emailUsuario) {
-        this.nameUsuario = nameUsuario;
-        this.lastnameUsuario = lastnameUsuario;
+    public UsuarioRequest(String nombreUsuario, String apellidoUsuario, String dniUsuario, RolesModel rolUsuario, Boolean habilitadoUsuario, String correoUsuario) {
+        this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
         this.dniUsuario = dniUsuario;
-        this.roleUsuario = roleUsuario;
-        this.ennableUsuario = ennableUsuario;
-        this.emailUsuario = emailUsuario;
+        this.rolUsuario = rolUsuario;
+        this.habilitadoUsuario = habilitadoUsuario;
+        this.correoUsuario = correoUsuario;
     }
 
-    public @NotBlank(message = "El nombre es obligatorio") String getNameUsuario() {
-        return nameUsuario;
-    }
+    public String getNombreUsuario() {return nombreUsuario;}
+    public void setNombreUsuario(String nombreUsuario) {this.nombreUsuario = nombreUsuario;}
 
-    public void setNameUsuario(@NotBlank(message = "El nombre es obligatorio") String nameUsuario) {
-        this.nameUsuario = nameUsuario;
-    }
+    public String getApellidoUsuario() {return apellidoUsuario;}
+    public void setApellidoUsuario(String apellidoUsuario) {this.apellidoUsuario = apellidoUsuario;}
 
-    public @NotBlank(message = "El apellido es obligatorio") String getLastnameUsuario() {
-        return lastnameUsuario;
-    }
+    public String getDniUsuario() {return dniUsuario;}
+    public void setDniUsuario(String dniUsuario) {this.dniUsuario = dniUsuario;}
 
-    public void setLastnameUsuario(@NotBlank(message = "El apellido es obligatorio") String lastnameUsuario) {
-        this.lastnameUsuario = lastnameUsuario;
-    }
+    public RolesModel getRolUsuario() {return rolUsuario;}
+    public void setRolUsuario(RolesModel rolUsuario) {this.rolUsuario = rolUsuario;}
 
-    public @NotBlank(message = "El DNI es obligatorio") @Size(min = 8, max = 8, message = "El DNI debe tener 8 caracteres") String getDniUsuario() {
-        return dniUsuario;
-    }
+    public Boolean getHabilitadoUsuario() {return habilitadoUsuario;}
+    public void setHabilitadoUsuario(Boolean habilitadoUsuario) {this.habilitadoUsuario = habilitadoUsuario;}
 
-    public void setDniUsuario(@NotBlank(message = "El DNI es obligatorio") @Size(min = 8, max = 8, message = "El DNI debe tener 8 caracteres") String dniUsuario) {
-        this.dniUsuario = dniUsuario;
-    }
-
-    public @NotNull(message = "El rol es obligatorio") RolesModel getRoleUsuario() {
-        return roleUsuario;
-    }
-
-    public void setRoleUsuario(@NotNull(message = "El rol es obligatorio") RolesModel roleUsuario) {
-        this.roleUsuario = roleUsuario;
-    }
-
-    public @NotNull(message = "El habilitado es obligatorio") Boolean getEnnableUsuario() {
-        return ennableUsuario;
-    }
-
-    public void setEnnableUsuario(@NotNull(message = "El habilitado es obligatorio") Boolean ennableUsuario) {
-        this.ennableUsuario = ennableUsuario;
-    }
-
-    public @NotBlank(message = "El correo es obligatorio") String getEmailUsuario() {
-        return emailUsuario;
-    }
-
-    public void setEmailUsuario(@NotBlank(message = "El correo es obligatorio") String emailUsuario) {
-        this.emailUsuario = emailUsuario;
-    }
+    public String getCorreoUsuario() {return correoUsuario;}
+    public void setCorreoUsuario(String correoUsuario) {this.correoUsuario = correoUsuario;}
 }
