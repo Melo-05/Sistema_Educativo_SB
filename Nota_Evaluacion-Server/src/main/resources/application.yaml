@@ -1,3 +1,13 @@
+server:
+  port: 8088
+
 spring:
   application:
-    name: Nota_Evaluacion-Server
+    name: Nota-Evaluacion-Server
+  config:
+    import: optional:configserver:http://localhost:8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
